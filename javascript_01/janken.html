@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+  <title>おみくじアプリ</title>
+</head>
+<body>
+  <button class="rock">グー</button>
+  <button class="scissors">チョキ</button>
+  <button class="paper">パー</button>
+  <div>あなたの手は<span class="myHand"></span></div>
+  <div>相手の手は<span class="ememyHand"></span></div>
+  <div>結果は…</div>
+  <div class="result"></div>
+  <script>
+    $(function() {
+      $(".rock").on("click", function() {
+        const hands = ["グー", "チョキ", "パー"]
+        const myHand = hands[0];
+        const enemyHandsIndexNumber = Math.floor(Math.random() * hands.length);
+        const enemyHand = hands[enemyHandsIndexNumber];
+        $(".myHand").text(myHand);
+        $(".ememyHand").text(enemyHand);
+        if (myHand === enemyHand) {
+          $(".result").text("あいこです");
+        } else if (enemyHand === "チョキ") {
+          $(".result").text("あなたの勝ちです");
+        } else {
+          $(".result").text("あなたの負けです");
+        }
+      });
+      
+      $(".scissors").on("click", function() {
+        const hands = ["グー", "チョキ", "パー"]
+        const myHand = hands[1];
+        const enemyHandsIndexNumber = Math.floor(Math.random() * hands.length);
+        const enemyHand = hands[enemyHandsIndexNumber];
+        $(".myHand").text(myHand);
+        $(".ememyHand").text(enemyHand);
+        if (myHand === enemyHand) {
+          $(".result").text("あいこです");
+        } else if (enemyHand === "パー") {
+          $(".result").text("あなたの勝ちです");
+        } else {
+          $(".result").text("あなたの負けです");
+        }
+      });
+      
+      $(".paper").on("click", function() {
+        const hands = ["グー", "チョキ", "パー"]
+        const myHand = hands[2];
+        const enemyHandsIndexNumber = Math.floor(Math.random() * hands.length);
+        const enemyHand = hands[enemyHandsIndexNumber];
+        $(".myHand").text(myHand);
+        $(".ememyHand").text(enemyHand);
+        if (myHand === enemyHand) {
+          $(".result").text("あいこです");
+        } else if (enemyHand === "グー") {
+          $(".result").text("あなたの勝ちです");
+        } else {
+          $(".result").text("あなたの負けです");
+        }
+      });
+    })
+  </script>
+</body>
+</html>
