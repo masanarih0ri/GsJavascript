@@ -40,6 +40,14 @@
       $(".clear").on("click", function() {
         localStorage.clear();
       });
+      
+      // ループで表示する
+      for(let i = 0; i < localStorage.length; i++) {
+        const localStorageKey = localStorage.key(i);
+        const localStorageValue = localStorage.getItem(localStorageKey);
+        const htmlContents = `<tr><th>${localStorageKey}</th><td>${localStorageValue}</td></tr>`;
+        $(".memoList").append(htmlContents); 
+      }
     })
   </script>
 </body>
